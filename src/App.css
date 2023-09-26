@@ -1,38 +1,105 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100vh;
+  /* Makes the parent container full height of the viewport */
+}
+
+.todo__form {
+  text-align: left;
+  /* Reset the text alignment for the form contents */
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  /* Adjust the width as needed */
+}
+
+.header {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+input {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: green;
+  border: none;
   color: white;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: darkgreen;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo__form, .todo-list {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Or whatever width you desire */
+  margin-bottom: 20px; /* Space between form and todo list */
 }
+
+ul {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;            /* Remove default padding */
+  margin: 0;             /* Remove default margin */
+  width: 100%;           /* Set to 100% if you want the table-like list to span the full width of its container */
+  display: table;        /* Makes the ul act like a table */
+  border-collapse: collapse; /* Borders will be merged into a single border */
+}
+
+li {
+  display: table-row;    /* Makes the li act like a table row */
+  display: flex;          /* Use flexbox for li layout */
+  justify-content: space-between; /* Maximize the space between text and icon */
+  align-items: center;
+}
+
+li > h1 { /* or any direct child element of li you want to act as a cell */
+  display: table-cell;   /* Makes the h1 inside the li act like a table cell */
+  padding: 10px 20px;    /* Padding around each cell */
+  border: 1px solid #ddd; /* Border around each cell */
+  font-size: 18px;       /* Font size for table cell content */
+  color: #333;           /* Text color for table cell content */
+  flex: 1;                /* Allow the text to take up as much space as possible */
+  margin: 0; 
+}
+
+/* Optional: Header styling for the first li (if it acts as a header) */
+li:first-child > h1 {
+  font-weight: bold;
+  background-color: #f7f7f7;
+}
+
+.delete-icon {
+  cursor: pointer;            /* Make it look clickable */
+  margin-left: 10px;          /* Space it a little from the todo text */
+  font-size: 20px;            /* Adjust size as needed */
+  color: red;                 /* Commonly, delete icons are red */
+  display: table-cell;        /* To keep in line with our table-like design */
+  vertical-align: middle;     /* Center it vertically */
+}
+
+.delete-icon:hover {
+  color: darkred;             /* Darken the color on hover for feedback */
+}
+
